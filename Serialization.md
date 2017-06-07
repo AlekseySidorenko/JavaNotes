@@ -1,23 +1,23 @@
-Сериализация
+Serialization
 =============
 
-Создаем объект, который будет непосредственно работать с файлом:
+Make object, that will work with file:
 ```java
 FileOutputStream fileStream = new FileOutputStream("Save.sv");
 ```
 
-Создаем объект, который будет работать с сериализуемыми объектами 
-и передавать их для записи в объект FileOutputStream:
+Make object, that will work with serializable objects 
+and send it to FileOutputStream object to write:
 ```java
 ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
 ```
 
-Сериализуем объект:
+Serialize object:
 ```java
 objectStream.writeObject(someObjectToSerialize);
 ```
 
-Закрываем ObjectOutputStream:
+Close ObjectOutputStream:
 ```java
 objectStream.close();
 ```
