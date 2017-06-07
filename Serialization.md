@@ -2,10 +2,12 @@ Serialization
 =============
 
 * All objects linked with serializable object must implement Serializable
-* some object's fields can't be serialize with whole object:
+* some object's fields can't be saved with whole object:
 ```java
-transient String field; 
+transient String field;
 ```
+
+
 
 
 Make object that will work with file:
@@ -53,4 +55,30 @@ public static void main(String[] args) {
       e.printStackTrace;
     }
 }
+```
+
+Deserialization
+===============
+
+Make object that will work with file:
+```java
+FileInputStream fileStream = new FileInputStream("Save.sv");
+```
+Make object that will work with serializable objects and get it from FileInputStream object :
+```java
+ObjectInputStream objectStream = new ObjectInputStream(fileStream);
+```
+Read object:
+```java
+Object one = objectStream.readObject();
+```
+
+Cast object:
+```java
+SomeType someType = (SomeType) one;
+```
+
+Close ObjectInputStream:
+```java
+objectStream.close();
 ```
