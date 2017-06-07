@@ -20,3 +20,30 @@ Close ObjectOutputStream:
 ```java
 objectStream.close();
 ```
+
+Serializable class sample:
+```java
+public class Box implements Serializable {
+    private int width;
+    private int height;
+
+    public void setWidth() { ... }
+    public void setHeight() { ... }
+}
+
+public static void main(String[] args) {
+    Box box = new Box();
+    box.setWidth(50);
+    box.setHeight(40);
+
+    try {
+      FileOutputStream fs = new FileOutputStream("save.sv");
+      ObjectOutputStream os = new ObjectOutputStream(fs);
+      os.writeObject(box);
+      os.close;
+    } catch (Exception e) {
+      e.printStackTrace;
+    }
+}
+}
+```
