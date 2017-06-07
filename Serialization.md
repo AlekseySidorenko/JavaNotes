@@ -1,6 +1,13 @@
 Serialization
 =============
 
+* All objects linked with serializable object must implement Serializable
+* some object's fields can't be serialize with whole object:
+```java
+transient String field; 
+```
+
+
 Make object that will work with file:
 ```java
 FileOutputStream fileStream = new FileOutputStream("Save.sv");
