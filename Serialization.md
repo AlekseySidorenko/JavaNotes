@@ -22,6 +22,7 @@ objectStream.close();
 ```
 
 Serializable class sample:
+--------------------------
 ```java
 public class Box implements Serializable {
     private int width;
